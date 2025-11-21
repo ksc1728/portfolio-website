@@ -1,128 +1,148 @@
-import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
-
-export default function Portfolio() {
-  const projects = [
-    {
-      title: "Project One",
-      description: "A full-stack web application built with React and Node.js",
-      github: "https://github.com/yourusername/project1",
-      demo: "https://project1-demo.vercel.app"
-    },
-    {
-      title: "Project Two",
-      description: "E-commerce platform with payment integration",
-      github: "https://github.com/yourusername/project2",
-      demo: null
-    },
-    {
-      title: "Project Three",
-      description: "Real-time chat application using WebSockets",
-      github: "https://github.com/yourusername/project3",
-      demo: "https://project3-demo.netlify.app"
-    }
-  ];
-
-  const internships = [
-    {
-      title: "Frontend Developer Intern",
-      company: "Tech Company A",
-      description: "Developed responsive web interfaces and improved site performance",
-      link: "https://company-a.com"
-    },
-    {
-      title: "Full Stack Developer Intern",
-      company: "Startup B",
-      description: "Built RESTful APIs and integrated third-party services",
-      link: "https://startup-b.com"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        {/* Header */}
-        <header className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Your Name
-          </h1>
-          <p className="text-xl text-slate-300">Web Developer</p>
-          <p className="text-slate-400 mt-2">Building modern web experiences</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Your Name
+            </h1>
+            <p class="text-xl text-slate-300">Web Developer</p>
+            <p class="text-slate-400 mt-2">Building modern web experiences</p>
         </header>
 
-        {/* Projects Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <div 
-                key={index}
-                className="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
-              >
-                <h3 className="text-xl font-semibold mb-3 text-blue-400">{project.title}</h3>
-                <p className="text-slate-300 mb-4 text-sm">{project.description}</p>
-                <div className="flex gap-3">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-md transition-colors text-sm"
-                    >
-                      <Github size={16} />
-                      Code
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-md transition-colors text-sm"
-                    >
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+        <!-- Projects Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-container"></div>
         </section>
 
-        {/* Internships Section */}
+        <!-- Internships Section -->
         <section>
-          <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {internships.map((internship, index) => (
-              <div 
-                key={index}
-                className="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
-              >
-                <h3 className="text-xl font-semibold mb-2 text-purple-400">{internship.title}</h3>
-                <p className="text-slate-400 mb-3 font-medium">{internship.company}</p>
-                <p className="text-slate-300 mb-4 text-sm">{internship.description}</p>
-                {internship.link && (
-                  <a
-                    href={internship.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-md transition-colors text-sm"
-                  >
-                    <ExternalLink size={16} />
-                    Visit Company
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
+            <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
+            <div class="grid md:grid-cols-2 gap-6" id="internships-container"></div>
         </section>
 
-        {/* Footer */}
-        <footer className="text-center mt-16 text-slate-400 text-sm">
-          <p>© 2024 Your Name. All rights reserved.</p>
+        <!-- Footer -->
+        <footer class="text-center mt-16 text-slate-400 text-sm">
+            <p>© 2024 Your Name. All rights reserved.</p>
         </footer>
-      </div>
     </div>
-  );
-}
+
+    <script>
+        // SVG Icons
+        const githubIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>';
+        const externalIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>';
+
+        // Projects Data
+        const projects = [
+            {
+                title: "Project One",
+                description: "A full-stack web application built with React and Node.js",
+                github: "https://github.com/yourusername/project1",
+                demo: "https://project1-demo.vercel.app"
+            },
+            {
+                title: "Project Two",
+                description: "E-commerce platform with payment integration",
+                github: "https://github.com/yourusername/project2",
+                demo: null
+            },
+            {
+                title: "Project Three",
+                description: "Real-time chat application using WebSockets",
+                github: "https://github.com/yourusername/project3",
+                demo: "https://project3-demo.netlify.app"
+            }
+        ];
+
+        // Internships Data
+        const internships = [
+            {
+                title: "Frontend Developer Intern",
+                company: "Tech Company A",
+                description: "Developed responsive web interfaces and improved site performance",
+                link: "https://company-a.com"
+            },
+            {
+                title: "Full Stack Developer Intern",
+                company: "Startup B",
+                description: "Built RESTful APIs and integrated third-party services",
+                link: "https://startup-b.com"
+            }
+        ];
+
+        // Render Projects
+        const projectsContainer = document.getElementById('projects-container');
+        projects.forEach(project => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20';
+            
+            let linksHTML = '<div class="flex gap-3">';
+            if (project.github) {
+                linksHTML += `
+                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-md transition-colors text-sm">
+                        ${githubIcon}
+                        Code
+                    </a>
+                `;
+            }
+            if (project.demo) {
+                linksHTML += `
+                    <a href="${project.demo}" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-md transition-colors text-sm">
+                        ${externalIcon}
+                        Live Demo
+                    </a>
+                `;
+            }
+            linksHTML += '</div>';
+            
+            projectCard.innerHTML = `
+                <h3 class="text-xl font-semibold mb-3 text-blue-400">${project.title}</h3>
+                <p class="text-slate-300 mb-4 text-sm">${project.description}</p>
+                ${linksHTML}
+            `;
+            projectsContainer.appendChild(projectCard);
+        });
+
+        // Render Internships
+        const internshipsContainer = document.getElementById('internships-container');
+        internships.forEach(internship => {
+            const internshipCard = document.createElement('div');
+            internshipCard.className = 'bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20';
+            
+            let linkHTML = '';
+            if (internship.link) {
+                linkHTML = `
+                    <a href="${internship.link}" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-md transition-colors text-sm">
+                        ${externalIcon}
+                        Visit Company
+                    </a>
+                `;
+            }
+            
+            internshipCard.innerHTML = `
+                <h3 class="text-xl font-semibold mb-2 text-purple-400">${internship.title}</h3>
+                <p class="text-slate-400 mb-3 font-medium">${internship.company}</p>
+                <p class="text-slate-300 mb-4 text-sm">${internship.description}</p>
+                ${linkHTML}
+            `;
+            internshipsContainer.appendChild(internshipCard);
+        });
+    </script>
+</body>
+</html>
