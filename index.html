@@ -1,0 +1,128 @@
+import React from 'react';
+import { ExternalLink, Github } from 'lucide-react';
+
+export default function Portfolio() {
+  const projects = [
+    {
+      title: "Project One",
+      description: "A full-stack web application built with React and Node.js",
+      github: "https://github.com/yourusername/project1",
+      demo: "https://project1-demo.vercel.app"
+    },
+    {
+      title: "Project Two",
+      description: "E-commerce platform with payment integration",
+      github: "https://github.com/yourusername/project2",
+      demo: null
+    },
+    {
+      title: "Project Three",
+      description: "Real-time chat application using WebSockets",
+      github: "https://github.com/yourusername/project3",
+      demo: "https://project3-demo.netlify.app"
+    }
+  ];
+
+  const internships = [
+    {
+      title: "Frontend Developer Intern",
+      company: "Tech Company A",
+      description: "Developed responsive web interfaces and improved site performance",
+      link: "https://company-a.com"
+    },
+    {
+      title: "Full Stack Developer Intern",
+      company: "Startup B",
+      description: "Built RESTful APIs and integrated third-party services",
+      link: "https://startup-b.com"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        {/* Header */}
+        <header className="text-center mb-16">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            Your Name
+          </h1>
+          <p className="text-xl text-slate-300">Web Developer</p>
+          <p className="text-slate-400 mt-2">Building modern web experiences</p>
+        </header>
+
+        {/* Projects Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, index) => (
+              <div 
+                key={index}
+                className="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"
+              >
+                <h3 className="text-xl font-semibold mb-3 text-blue-400">{project.title}</h3>
+                <p className="text-slate-300 mb-4 text-sm">{project.description}</p>
+                <div className="flex gap-3">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-md transition-colors text-sm"
+                    >
+                      <Github size={16} />
+                      Code
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-md transition-colors text-sm"
+                    >
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Internships Section */}
+        <section>
+          <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {internships.map((internship, index) => (
+              <div 
+                key={index}
+                className="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+              >
+                <h3 className="text-xl font-semibold mb-2 text-purple-400">{internship.title}</h3>
+                <p className="text-slate-400 mb-3 font-medium">{internship.company}</p>
+                <p className="text-slate-300 mb-4 text-sm">{internship.description}</p>
+                {internship.link && (
+                  <a
+                    href={internship.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-md transition-colors text-sm"
+                  >
+                    <ExternalLink size={16} />
+                    Visit Company
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="text-center mt-16 text-slate-400 text-sm">
+          <p>© 2024 Your Name. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+  );
+}
