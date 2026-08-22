@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Developer Portfolio</title>
+    <title>Full Stack Developer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -20,7 +20,15 @@
                    <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                         SRICHANDANA KASIBHATLA
                     </h1>
-                    <p class="text-slate-400 mt-2">Full Stack Developer experienced in building responsive and scalable web applications and integrating AI/ML models. Strong in Data Structures, Algorithms, and Object-Oriented Programming. Seeking opportunities in Frontend, Backend, or Full Stack Development.</p>
+                    <p class="text-slate-400 mt-2">AI/ML & Full-Stack Engineer building intelligent and interactive digital experiences.</p>
+                    
+                    <div class="mt-6 ">
+                        <h3 class="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        About
+                    </h3>
+                        <p class="mt-4 text-slate-400">
+                        I'm an AI/ML and Full-Stack Engineer focused on building AI-powered applications and end-to-end products. My experience spans Python, FastAPI, React/TypeScript, RAG, computer vision, machine learning, and REST APIs. I'm also passionate about graphics, 3D, game development, and exploring the intersection of AI and immersive experiences.
+                    </p>
                     <p class="mt-4 text-slate-400 hover:text-blue-400 transition-colors">Email:
                     <span class="text-slate-400 hover:text-blue-400 transition-colors">srichandana.kas@gmail.com</span>
                     </p>
@@ -43,6 +51,8 @@
                             </svg>
                         </a>
                     </div>
+                    </div>
+                    
                 </div>
                 <div class="flex-shrink-0">
                     <img src="./ksrichandana.jpg" alt="Profile Picture" class="w-40 h-40 rounded-full border-4 border-slate-600 shadow-lg">
@@ -64,7 +74,7 @@
 
         <!-- Footer -->
         <footer class="text-center mt-16 text-slate-400 text-sm">
-            <p>© 2026 kasi. All rights reserved.</p>
+            <p>© 2026 srichandana kasibhatla. All rights reserved.</p>
         </footer>
     </div>
 
@@ -76,47 +86,65 @@
         // Projects Data
         const projects = [
             {
-                title: "Contact Registry Web App",
-                description: "A full-stack contact management system with CRUD operations built with React and Node.js",
-                github: "https://github.com/ksc1728/contact-app",
+                title: "RouteMap AI",
+                description: "AI-powered delivery route optimizer that converts natural-language instructions into validated, optimized, and disruption-aware delivery routes",
+                github: "https://github.com/ksc1728/route-optimizer/tree/main/routemind-ai",
+                demo: null
+            },
+            {
+                title: "Research Paper Analyzer",
+                description: "RAG-powered research assistant that analyzes research PDFs and generates grounded answers with page-level citations",
+                github: "https://github.com/ksc1728/paper-lens",
+                demo: null
+            },
+            {
+                title: "Food Image classifier - vitamin detection",
+                description: "Computer vision application that classifies food images into five vitamin-associated categories using a fine-tuned MobileNetV2 model with 77.76% test accuracy",
+                github: "https://github.com/ksc1728/vgg19-vitamin-model",
                 demo: null
             },
             {
                 title: "Voice Enabled Task Tracker",
                 description: "A full-stack Voice input enabled task management system with integrated AI and REST APIs built with React and Node.js and AI tools",
-                github: "https://github.com/ksc1728/voice-enabled-task-tracker",
-                demo: "https://voice-enabled-task-tracker-roan.vercel.app/"
+                github: "https://github.com/ksc1728/voice-enabled-task-tracker"
+                
             },
-            {
-                title: "Space Exploration Website",
-                description: "A responsive website about space exploration using HTML, CSS, and JavaScript",
-                github: "https://github.com/ksc1728/space_website",
-                demo: "https://space-website-beta-azure.vercel.app/"
-            },
+            
             {
                 title: "Personality Quiz",
                 description: "An interactive personality quiz using React.js with dynamic state management and real-time result mapping",
                 github: "https://github.com/ksc1728/princess-personality-quiz",
                 demo: "https://princess-personality-quiz.vercel.app/"
+            },
+            {
+                title: "Project Management Website",
+                description: "Full-stack project management application with CRUD operations built with React, Node.js, Express, and MongoDB, featuring authentication, project management, and drag-and-drop Kanban workflows",
+                github: "https://github.com/ksc1728/project-management-website"
             }
+
         ];
 
         // Internships Data
         const internships = [
             {
+                title:"System Engineer",
+                company: "Tata Consultancy Services",
+                description: "Trained in enterprise software engineering through hands-on training in Python, Java, SQL, Unix, SDLC, version control, debugging, and application development",
+                companyDescription: "A leading global IT services and consulting company"
+            },
+            {
                 title: "Intern",
                 company: "Visakhapatnam Steel Plant",
-                description: "A safety website made using Python Flask with integrated object detection model for safety equipment detection",
-                link: "https://github.com/ksc1728/yolo-project",
+                description: "Developed an industrial safety monitoring system using computer vision and object detection to identify workplace hazards and PPE compliance issues",
                 companyDescription: "A major steel producer in India"
             },
             {
-                title: "Full Stack Developer Intern",
-                company: "MERN full stack internship, ETHNUS",
-                description: "A full-stack project management tool using MongoDB, ReactJS, Bootstrap, built with RESTful APIs and integrated third-party services",
-                link: "https://project-planner-front1.vercel.app/",
-                companyDescription: "A technology solutions company"
+                title: "Intern",
+                company: "Tann Mann Foundation",
+                description: "Automated large-scale fashion dataset creation using Python and Selenium-based web scraping workflows for structured data curation",
+                companyDescription: "A non-profit organization focused on sustainable tech solutions and social impact"
             }
+            
         ];
 
         // Render Projects
@@ -184,6 +212,5 @@
     </script>
 </body>
 </html>
-
 
 
